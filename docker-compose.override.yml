@@ -1,0 +1,9 @@
+producer:
+  build: ./producer
+  volumes:
+    - ./producer:/code
+consumer:
+  build: ./consumer
+  volumes:
+    - ./consumer:/code
+
