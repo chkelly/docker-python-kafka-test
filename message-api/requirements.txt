@@ -1,1 +1,2 @@
 git+http://github.com/dpkp/kafka-python.git@master
+flask

@@ -1,9 +1,22 @@
-producer:
-  build: ./producer
+message-api:
+  build: ./message-api
+  ports:
+     - 8081:5000
   volumes:
-    - ./producer:/code
+    - ./message-api:/code
 consumer:
   build: ./consumer
   volumes:
     - ./consumer:/code
-
+www-api:
+  build: ./www-api
+  ports:
+     - 8080:5000
+  volumes:
+    - ./www-api:/code
+www:
+  build: ./www
+  ports:
+    - "9000:9000"
+  volumes:
+    - ./www:/code

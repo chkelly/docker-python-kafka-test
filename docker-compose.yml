@@ -1,10 +1,12 @@
-producer:
+message-api:
   image: TBD
   restart: always
   stdin_open: true
   tty: true
+  ports:
+   - 5000
   links:
-  - kafka
+    - kafka
 consumer:
   image: TBD
   restart: always
@@ -12,6 +14,21 @@ consumer:
   tty: true
   links:
     - kafka
+    - redis
+www-api:
+  image: TBD
+  restart: always
+  stdin_open: true
+  tty: true
+  links:
+    - redis
+www:
+  image: TBD
+  restart: always
+  tty: true
+  stdin_open: true
+  ports:
+   - 9000
 zookeeper:
   image: wurstmeister/zookeeper
   ports:
@@ -26,3 +43,7 @@ kafka:
    - KAFKA_ADVERTISED_HOST_NAME=192.168.99.100
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+redis:
+  image: redis
+  ports:
+   - 6379
