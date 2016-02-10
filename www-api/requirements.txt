@@ -1,3 +1,2 @@
-git+http://github.com/dpkp/kafka-python.git@master
-flask
-redis
+flask==0.10.1
+redis==2.10.5

@@ -1,2 +1,2 @@
 git+http://github.com/dpkp/kafka-python.git@master
-flask
+flask==0.10.1

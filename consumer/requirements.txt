@@ -1,2 +1,2 @@
 git+http://github.com/dpkp/kafka-python.git@master
-redis
+redis==2.10.5
