@@ -20,3 +20,13 @@ www:
     - "9000:9000"
   volumes:
     - ./www:/code
+tests:
+  build: ./tests
+  stdin_open: true
+  tty: true
+  links:
+    - www-api
+    - message-api
+    - redis
+  volumes:
+    - ./tests:/code

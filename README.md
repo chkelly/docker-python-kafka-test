@@ -6,10 +6,7 @@ This app demonstrates a few concepts..
 * A simple consumer (consumer) that does something with the messages (stores them in redis)
 * A simple www-api that reads from redis and returns this data via JSON
 * A simple web page (using harp to serve the static assets) which uses jquery to display a list of messages from the www-api
-
-This app will demonstrate when done
-* Functional testing of this service
-
+* Running of Integration tests
 
 This is not meant to ever leave a developers laptop...
 
@@ -37,5 +34,9 @@ Tail the logs of the consumer process
 
 ## Running the tests
 
-WIP
+### Integration tests
+1. First start all services via `docker-compose up -d`
+1. Give the system a minute or so to converge and such. Kafka needs to start up and register itself with zookeeper.
+1. Run the integration tests with the following command `docker-compose run tests lettuce`
+
 
