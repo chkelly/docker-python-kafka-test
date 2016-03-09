@@ -7,6 +7,13 @@ message-api:
    - 5000
   links:
     - kafka
+message-generator:
+  image: TBD
+  restart: always
+  stdin_open: true
+  tty: true
+  links:
+    - kafka
 consumer:
   image: TBD
   restart: always
